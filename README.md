@@ -1,2 +1,2 @@
 # robotic-chess
-An AI-powered chess playing robot.
+An AI-powered chess playing robot, powered by Raspberry Pi.
