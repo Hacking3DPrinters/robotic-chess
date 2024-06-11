@@ -29,3 +29,10 @@ Examples (absolute position mode G90):
 	G01 X10 F2000 - move X-axis to X=10mm at 2000mm/min
 Examples (relative position mode G91):
 	G01 X10 F2000 - move X-axis 10mm in the positive direction at 2000mm/min
+
+CONTROL COMMANDS
+M106 - Set fan speed
+Examples:
+	M106 S255 - set fan to full speed
+	M106 S127 - set fan to half speed
+	M106 S0 - set fan to zero speed
