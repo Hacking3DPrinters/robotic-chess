@@ -47,16 +47,31 @@ class Parser:
         	self.cmd_list.append('G20 ; inches')
     def change_home(self,home=[0,20,0]):
         self.home=home
-    def parse(self, custom_name=''):
+    def parse(self, target=''):
         self.cmd_list.append('%')
-        if len(custom_name)>0:
-            f=open(custom_name,'w')
+        if len(target)>0:
+            if target=='stdout':
+                output=''
+                for cmd in self.cmd_list:
+                    print('Parsing '+cmd+'...')
+                    output+=cmd+'\n'
+                return output
+            else:
+            	f=open(target,'w')
+                for cmd in self.cmd_list:
+            		print('Parsing '+cmd+'...')
+           		 	f.write(cmd+'\n')
+        			f.close()
+        
         else:
             f=open('output.gcode','w')
-        for cmd in self.cmd_list:
+            for cmd in self.cmd_list:
             print('Parsing '+cmd+'...')
             f.write(cmd+'\n')
-        f.close()
+        	f.close()
+    def clear(self):
+        self.cmd_list=[]
+        
         
                 
         
