@@ -48,7 +48,8 @@ class Parser:
     def change_home(self,home=[0,20,0]):
         self.home=home
     def parse(self, target=''):
-        self.cmd_list.append('%')
+        if self.cmd_list[len(self.cmd_list)-1]!='%':
+            self.cmd_list.append('%')
         if len(target)>0:
             if target=='stdout':
                 output=''
@@ -57,18 +58,18 @@ class Parser:
                     output+=cmd+'\n'
                 return output
             else:
-            	f=open(target,'w')
+                f=open(target,'w')
                 for cmd in self.cmd_list:
-            		print('Parsing '+cmd+'...')
-           		 	f.write(cmd+'\n')
-        			f.close()
+                    print('Parsing '+cmd+'...')
+                    f.write(cmd+'\n')
+                    f.close()
         
         else:
             f=open('output.gcode','w')
             for cmd in self.cmd_list:
-            print('Parsing '+cmd+'...')
-            f.write(cmd+'\n')
-        	f.close()
+                print('Parsing '+cmd+'...')
+                f.write(cmd+'\n')
+                f.close()
     def clear(self):
         self.cmd_list=[]
         

@@ -3,14 +3,14 @@ requires = ["setuptools>=61.0","stockfish==3.28.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "robotic-chess"
-version = "0.1"
+name = "robotic_chess"
+version = "0.2.1"
 authors = [
   { name="Benjamin Porter", email="bcgcustomerservices@gmail.com" },
 ]
 description = "A 3D printer-based chess playing robot."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",

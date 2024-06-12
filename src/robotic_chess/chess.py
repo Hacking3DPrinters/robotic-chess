@@ -2,7 +2,7 @@ from stockfish import Stockfish
 stockfish_path="" # place path to stockfish here
 class Board:
     def __init__(self,fen='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',cpu=2,ram=2048):
-    	self.stockfish = Stockfish(path=stockfish_path, parameters={"Threads": cpu, "Hash": ram})
+        self.stockfish = Stockfish(path=stockfish_path, parameters={"Threads": cpu, "Hash": ram})
         if self.stockfish.is_fen_valid(fen):
             self.stockfish.set_fen_position(fen)
     def engine_skill(self,rating=3000):
