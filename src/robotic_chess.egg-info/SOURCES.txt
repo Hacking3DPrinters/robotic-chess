@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/robotic_chess/chess.py
+src/robotic_chess/gcode.py
+src/robotic_chess.egg-info/PKG-INFO
+src/robotic_chess.egg-info/SOURCES.txt
+src/robotic_chess.egg-info/dependency_links.txt
+src/robotic_chess.egg-info/top_level.txt
