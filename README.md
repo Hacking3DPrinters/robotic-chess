@@ -1,2 +1,4 @@
-# robotic-chess
-An AI-powered chess playing robot, powered by Raspberry Pi.
+# Robotic Chess
+An chess playing robot, powered by Stockfish.
+For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-chess/wiki).
+
