@@ -1,0 +1,7 @@
+pyproject.toml
+src/chess.py
+src/chesslib.egg-info/PKG-INFO
+src/chesslib.egg-info/SOURCES.txt
+src/chesslib.egg-info/dependency_links.txt
+src/chesslib.egg-info/requires.txt
+src/chesslib.egg-info/top_level.txt

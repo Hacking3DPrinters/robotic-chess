@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: robotic_chess
+Version: 0.2.2
+Summary: A 3D printer-based chess playing robot.
+Author-email: Benjamin Porter <bcgcustomerservices@gmail.com>
+Project-URL: Homepage, https://github.com/hippoprogrammer/robotic-chess
+Project-URL: Issues, https://github.com/hippoprogrammer/robotic-chess/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown

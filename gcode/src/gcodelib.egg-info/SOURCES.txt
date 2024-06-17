@@ -1,0 +1,7 @@
+pyproject.toml
+src/gcode.py
+src/gcodelib.egg-info/PKG-INFO
+src/gcodelib.egg-info/SOURCES.txt
+src/gcodelib.egg-info/dependency_links.txt
+src/gcodelib.egg-info/requires.txt
+src/gcodelib.egg-info/top_level.txt

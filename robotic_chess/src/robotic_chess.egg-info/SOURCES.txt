@@ -1,9 +1,5 @@
-LICENSE
-README.md
 pyproject.toml
-src/robotic_chess/__init__.py
-src/robotic_chess/chess.py
-src/robotic_chess/gcode.py
+src/__init__.py
 src/robotic_chess.egg-info/PKG-INFO
 src/robotic_chess.egg-info/SOURCES.txt
 src/robotic_chess.egg-info/dependency_links.txt

@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: chesslib
+Version: 0.2
+Summary: A chess library integrated with stockfish.
+Author-email: Benjamin Porter <bcgcustomerservices@gmail.com>
+Project-URL: Homepage, https://github.com/hippoprogrammer/robotic-chess
+Project-URL: Issues, https://github.com/hippoprogrammer/robotic-chess/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: stockfish

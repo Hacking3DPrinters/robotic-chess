@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcodelib"
+version = "0.2"
+authors = [
+  { name="Benjamin Porter", email="bcgcustomerservices@gmail.com" },
+]
+description = "A chess library integrated with stockfish."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "octoprint-cli"
+]
+
+[project.urls]
+Homepage = "https://github.com/hippoprogrammer/robotic-chess"
+Issues = "https://github.com/hippoprogrammer/robotic-chess/issues"
