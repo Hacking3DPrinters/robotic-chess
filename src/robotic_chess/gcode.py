@@ -34,7 +34,10 @@ class Parser:
     def add_home(self):
         self.cmd_list.append('G00 X{x} Y{y} Z{z} ; go to set home'.format(x=str(self.home[0]), y=str(self.home[1]), z=str(self.home[2])))
     def add_fan(self,speed=255):
-        self.cmd_list.append('M106 S{s} ; use fan'.format(s=str(speed)))
+        if speed=255:
+            self.cmd_list.append('M106 ; use fan'.format(s=str(speed)))
+        else:
+            self.cmd_list.append('M106 S{s} ; use fan'.format(s=str(speed)))
     def change_pos(self,rel_pos=True):
         if rel_pos:
             self.cmd_list.append('G91 ; set relative position')
