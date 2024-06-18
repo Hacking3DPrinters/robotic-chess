@@ -8,16 +8,18 @@ class Parser:
     def setup(self,rel_pos=True,mm=True,home=[0,20,0]):
         self.cmd_list.append('%')
         self.home=home
-        
-        if rel_pos:
-            self.cmd_list.append('G91 ; set relative position')
-        else:
-            self.cmd_list.append('G90 ; set absolute position')
+        self.pos=rel_pos
         if mm:
             self.cmd_list.append('G21 ; mm')
         else:
             self.cmd_list.append('G20 ; inches')
+        self.cmd_list.append('G90 ; set absolute position for homing')
         self.cmd_list.append('G00 X{x} Y{y} Z{z} ; go to set home'.format(x=str(home[0]), y=str(home[1]), z=str(home[2])))
+        if self.pos:
+            self.cmd_list.append('G91 ; set relative position')
+        else:
+            self.cmd_list.append('G90 ; set absolute position')
+       
     def add_movement(self,x=0,y=0,z=0,speed=200):
         if (x!=0 or y!=0 or z!=0):
             cmd='G01 '
@@ -32,14 +34,20 @@ class Parser:
         else:
         	pass
     def add_home(self):
+        old_pos=self.pos
+        self.change_pos(rel_pos=False)
         self.cmd_list.append('G00 X{x} Y{y} Z{z} ; go to set home'.format(x=str(self.home[0]), y=str(self.home[1]), z=str(self.home[2])))
+        self.change_pos(old_pos)
     def add_fan(self,speed=255):
-        if speed=255:
-            self.cmd_list.append('M106 ; use fan'.format(s=str(speed)))
+        if speed==255:
+            self.cmd_list.append('M106 ; use fan')
+        elif speed==0:
+            self.cmd_list.append('M107 ; use fan')
         else:
             self.cmd_list.append('M106 S{s} ; use fan'.format(s=str(speed)))
     def change_pos(self,rel_pos=True):
-        if rel_pos:
+        self.pos=rel_pos
+        if self.pos:
             self.cmd_list.append('G91 ; set relative position')
         else:
             self.cmd_list.append('G90 ; set absolute position')
