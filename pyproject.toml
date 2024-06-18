@@ -16,6 +16,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "stockfish==3.28.0",
+    "octoprint-cli==3.3.2"
+]
 
 [project.urls]
 Homepage = "https://github.com/hippoprogrammer/robotic-chess"
