@@ -19,10 +19,11 @@ class Printer:
     else:
       raise PrinterError('No file selected using Printer.load_file()')
   def run_gcode(self,gcode=()):
-    try:
+    if str(type(gcode))=='<class \'tuple\'>':
     	for gcmd in gcode:
     		cmd('octoprint-cli gcode {command}'.format(command=str(gcmd)))
-    except:
+    else:
+      raise PrinterError('gcode was not in tuple form')
   def connect(self):
     # should never be called
     cmd('octoprint-cli connection connect')
