@@ -18,8 +18,11 @@ class Printer:
       self.loaded_file=False
     else:
       raise PrinterError('No file selected using Printer.load_file()')
-  def run_gcode(self,gcode):
-    cmd('octoprint-cli gcode {command}'.format(command=str(gcode)))
+  def run_gcode(self,gcode=()):
+    try:
+    	for gcmd in gcode:
+    		cmd('octoprint-cli gcode {command}'.format(command=str(gcmd)))
+    except:
   def connect(self):
     # should never be called
     cmd('octoprint-cli connection connect')
