@@ -1,4 +1,5 @@
 # a simple module for parsing Python to .gcode
+# NEEDS TO BE REWRITTEN
 class Parser:
     def __init__(self):
         self.cmd_list=[]
