@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "robotic_chess"
-version = "0.2.1"
+version = "0.2.4"
 authors = [
   { name="Benjamin Porter", email="bcgcustomerservices@gmail.com" },
 ]
