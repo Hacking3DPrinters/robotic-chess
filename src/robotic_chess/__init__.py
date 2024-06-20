@@ -38,8 +38,7 @@ while playing: # while game is ongoing
     		if len(h_move)==4:
       		break
       print('Input invalid. Should be formatted as [start][end], e.g. a1a2 for square a1 to square a2')
-    h_coords = notation_to_coords(h_coords)
-    
+    b.opponent_move(moves=[h_move])
   else: # if computer vs computer
     # take move from stockfish (see below)
     pass # placeholder
