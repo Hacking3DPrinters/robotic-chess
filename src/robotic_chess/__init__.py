@@ -33,8 +33,13 @@ mode = 0 # track game mode (0 = human vs. computer, 1 = human vs. human-controll
 
 while playing: # while game is ongoing
   if mode!=2: # if human is playing
-    # take move from human
-    pass # placeholder
+    while True:
+    		h_move = str(input('Input move: '))
+    		if len(h_move)==4:
+      		break
+      print('Input invalid. Should be formatted as [start][end], e.g. a1a2 for square a1 to square a2')
+    h_coords = notation_to_coords(h_coords)
+    
   else: # if computer vs computer
     # take move from stockfish (see below)
     pass # placeholder
