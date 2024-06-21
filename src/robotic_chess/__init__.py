@@ -22,7 +22,7 @@ def letter_to_number(letter): # convert chess columns (a-h) to numbers (1-8)
     return 8
     
 def notation_to_coords(move='a1a2'): # use complex function to convert a square-square move to [[coordx,coordy],[coordx,coordy]] format
-  return [[1.59375+((letter_to_number(move[0:1])-1)*3.1875),1.59375+((int(move[1:2])-1)*3.1875)],[1.59375+((letter_to_number(move[2:3])-1)*3.1875),1.59375+((int(move[3:4])-1)*3.1875)]]
+  return [[15.9375+((letter_to_number(move[0:1])-1)*31.875),15.9375+((int(move[1:2])-1)*31.875)],[15.9375+((letter_to_number(move[2:3])-1)*31.875),15.9375+((int(move[3:4])-1)*31.875)]]
 
 def human_move():
   while True:
@@ -33,7 +33,23 @@ def human_move():
     return h_move
 
 def computer_move(board):
-  return board.engine_move()
+	best_move = board.computer_move()
+	best_move_coords = notation_to_coords(move=best_move)
+	if get_capture(best_move):
+		capture_coords={'x':best_move_coords[1][0],'y':best_move_coords[1][1],'z':piece_height}
+		printer.run_gcode(p.add_movement(z=20, speed=1000))
+		printer.run_gcode(p.add_movement(x=capture_coords['x'], y=capture_coords['y'], z=capture_coords['z'], speed=500))
+		printer.run_gcode(p.add_fan())
+		printer.run_gcode(p.add_movement(z=20, speed=1000))
+		# move to bin
+		printer.run_gcode(p.add_fan(speed=0))
+		printer.run_gcode(p.add_home())
+	printer.run_gcode(p.add_movement(x=best_move_coords[0][0], y=best_move_coords[0][1], z=piece_height, speed=500))
+	printer.run_gcode(p.add_fan())
+	printer.run_gcode(p.add_movement(z=20, speed=1000))
+	printer.run_gcode(p.add_movement(x=best_move_coords[1][0], y=best_move_coords[1][1], z=piece_height, speed=500))
+	printer.run_gcode(p.add_fan(speed=0))
+	printer.run_gcode(p.add_home())
 
 b = Board() # initialise classes
 p = Parser()
@@ -48,24 +64,13 @@ mode = 0 # track game mode (0 = human vs. computer, 1 = human vs. human-controll
 
 while playing: # while game is ongoing
   if mode!=2: # if human is playing
-    b.opponent_move(human_move())
+    b.opponent_move(human_move()) # take move
   else: # if computer vs computer
     # take move from stockfish (see below)
     pass # placeholder
   # check for win after each move
   if mode!=1: # if computer is playing
-    best_move = computer_move(b)
-    best_move_coords = notation_to_coords(move=best_move)
-    if get_capture(best_move):
-      capture_coords={'x':best_move_coords[0][0],'y':best_move_coords[0][1],'z':piece_height}
-      printer.run_gcode(p.add_movement(z=20, speed=1000))
-      printer.run_gcode(p.add_movement(x=capture_coords['x'], y=capture_coords['y'], z=capture_coords['z'], speed=500))
-      printer.run_gcode(p.add_fan())
-      printer.run_gcode(p.add_movement(z=20, speed=1000))
-      # move to bin
-      printer.run_gcode(p.add_fan(speed=0))
-      printer.run_gcode(p.add_home())
-    # make move
+    # see above
   else: # if human vs human
     # take move from remote human (for future version v2)
     pass # placeholder
