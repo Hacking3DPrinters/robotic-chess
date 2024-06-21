@@ -2,7 +2,7 @@
 class Parser:
     def __init__(self):
         pass
-    def setup(self,rel_pos=True,mm=True,home=(0,20,0)):
+    def setup(self,rel_pos=True,mm=True,home=(0,0,20)):
         cmd_list=[]
         self.home=home
         self.pos=rel_pos
@@ -55,7 +55,7 @@ class Parser:
             return tuple(['G21 ; mm'])
         else:
         	return tuple(['G20 ; inches'])
-    def change_home(self,home=(0,20,0)):
+    def change_home(self,home=(0,0,20)):
         self.home=home
         
                 
