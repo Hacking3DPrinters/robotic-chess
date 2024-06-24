@@ -1,5 +1,9 @@
+print('Loading stockfish lib...')
 from stockfish import Stockfish
+print('Loading stockfish engine...')
 stockfish_path="" # place path to stockfish here
+if len(stockfish_path)==0:
+   raise ImportError('Stockfish engine failed to load. Please specify a valid path string.)
 class Board:
     def __init__(self,fen='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',cpu=2,ram=2048):
         self.stockfish = Stockfish(path=stockfish_path, parameters={"Threads": cpu, "Hash": ram})
@@ -16,4 +20,6 @@ class Board:
     def opponent_move(self,moves=['a1a2']):
         # multiple moves can be defined
         self.stockfish.make_moves_from_current_position(moves)
-    
+
+print('Chesslib v2')
+print('MIT Licence 2024 Benjamin Porter')
