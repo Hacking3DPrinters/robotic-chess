@@ -1,5 +1,7 @@
+print('Loading os module...')
 from os import system as cmd
 from os.path import exists
+print('Loading finished.')
 class PrinterError(Exception):
   pass
 class Printer:
@@ -29,3 +31,6 @@ class Printer:
     cmd('octoprint-cli connection connect')
   def disconnect(self):
     cmd('octoprint-cli connection disconnect')
+
+print('Octoprintlib v1.2')
+print('MIT Licence 2024 Benjamin Porter')
