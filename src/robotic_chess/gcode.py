@@ -57,9 +57,6 @@ class Parser:
         	return tuple(['G20 ; inches'])
     def change_home(self,home=(0,0,20)):
         self.home=home
-        
-                
-        
-        
-        
-        
+
+print('Gcodelib v2.1')
+print('MIT License 2024 Benjamin Porter')
