@@ -71,17 +71,23 @@ else:
   print('Mode invalid. Please retry.') # otherwise exit
   sys.exit()
 
-print('Please select a rating:')
-
 if mode==0 or mode==1: # if <=1 computers are playing
 	b = Board() # initialise classes
 	p = Parser()
 	printer = robotic_chess.octoprint.Printer()
+  print('Please select a rating:')
+	print('Valid ratings are between 100 and 3100')
+  b.engine_skill(int(input('Rating: '))))
 else: # if 2 computers are playing
 	b1 = Board() # set up two computer instances
 	b2 = Board()
 	p = Parser()
 	printer = robotic_chess.octoprint.Printer()
+	print('Please select a rating for bot 1:')
+  print('Valid ratings are between 100 and 3100')
+  b1.engine_skill(int(input('Rating: ')))
+  print('Please select a rating for bot 2:')
+  b2.engine_skill(int(input('Rating: ')))
 
 piece_height = 100 # define piece height in mm
 
