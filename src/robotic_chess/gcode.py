@@ -59,4 +59,4 @@ class Parser:
         self.home=home
 
 print('Gcodelib v2.1')
-print('MIT License 2024 Benjamin Porter')
+print('MIT Licence 2024 Benjamin Porter')
