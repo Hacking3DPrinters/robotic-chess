@@ -1,7 +1,10 @@
+print('Initialising libraries...')
 from robotic_chess.chess import Board # import chess lib
 from robotic_chess.gcode import Parser # import gcode lib
 import robotic_chess.octoprint # import printer lib
+import sys # import exit lib
 # main code goes here
+print('Initialised.')
 
 def letter_to_number(letter): # convert chess columns (a-h) to numbers (1-8)
   if letter=='a':
@@ -51,7 +54,24 @@ def computer_move(board): # take move from engine
 	printer.run_gcode(p.add_home()) # go home
 	return best_move
 
-mode = 0 # track game mode (0 = human vs. computer, 1 = human vs. human-controlled computer, 2 = computer vs. computer) - functionality will be added later
+print('Robotic Chess v1.0.0')
+print('MIT Licence 2024 Benjamin Porter and Zachary Birket')
+print()
+
+print('Please select a game mode:')
+print('Mode 0: Physical Human vs. Virtual Computer')
+print('Mode 1: Physical Human vs. Virtual Human')
+print('Mode 2: Virtual Computer vs. Virtual Computer')
+
+mode = int(input('Mode (0/1/2): ')) # track game mode (0 = human vs. computer, 1 = human vs. human-controlled computer, 2 = computer vs. computer) - functionality will be added later
+
+if mode==0 or mode==1 or mode==2: # check if mode is valid
+  pass
+else:
+  print('Mode invalid. Please retry.') # otherwise exit
+  sys.exit()
+
+print('Please select a rating:')
 
 if mode==0 or mode==1: # if <=1 computers are playing
 	b = Board() # initialise classes
