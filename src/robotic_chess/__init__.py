@@ -29,30 +29,30 @@ def notation_to_coords(move='a1a2'): # use complex function to convert a square-
 
 def human_move(): # take move from human
   while True: # while move is invalid
-    		h_move = str(input('Input move: ')) # take a move
-    		if len(h_move)==4: # if move is valid
-      		break # break loop
-      print('Input invalid. Should be formatted as [start][end], 	e.g. a1a2 for square a1 to square a2') # if move is invalid, print error message
+    h_move = str(input('Input move: ')) # take a move
+    if len(h_move)==4: # if move is valid
+      break # break loop
+    print('Input invalid. Should be formatted as [start][end], 	e.g. a1a2 for square a1 to square a2') # if move is invalid, print error message
     return h_move # return move
 
 def computer_move(board): # take move from engine
-	best_move = board.engine_move() # get best move
-	best_move_coords = notation_to_coords(move=best_move) # get coords for best move
-	if get_capture(best_move): # if move is a capture
-		capture_coords={'x':best_move_coords[1][0],'y':best_move_coords[1][1],'z':piece_height} # find coords for the capture
-		printer.run_gcode(p.add_movement(x=capture_coords['x'], y=capture_coords['y'], z=capture_coords['z'], speed=500)) # go to those coords
-		printer.run_gcode(p.add_fan()) # pick up piece
-		printer.run_gcode(p.add_movement(z=20, speed=1000)) # move up
-		# move to bin
-		printer.run_gcode(p.add_fan(speed=0)) # release piece
-		printer.run_gcode(p.add_home()) # go home
-	printer.run_gcode(p.add_movement(x=best_move_coords[0][0], y=best_move_coords[0][1], z=piece_height, speed=500)) # find coords of start square and go there
-	printer.run_gcode(p.add_fan()) # pick up piece
-	printer.run_gcode(p.add_movement(z=20, speed=1000)) # move up
-	printer.run_gcode(p.add_movement(x=best_move_coords[1][0], y=best_move_coords[1][1], z=piece_height, speed=500)) # find coords of end square and go there
-	printer.run_gcode(p.add_fan(speed=0)) # release piece
-	printer.run_gcode(p.add_home()) # go home
-	return best_move
+  best_move = board.engine_move() # get best move
+  best_move_coords = notation_to_coords(move=best_move) # get coords for best move
+  if get_capture(best_move): # if move is a capture
+    capture_coords={'x':best_move_coords[1][0],'y':best_move_coords[1][1],'z':piece_height} # find coords for the capture
+    printer.run_gcode(p.add_movement(x=capture_coords['x'], y=capture_coords['y'], z=capture_coords['z'], speed=500)) # go to those coords
+    printer.run_gcode(p.add_fan()) # pick up piece
+    printer.run_gcode(p.add_movement(z=20, speed=1000)) # move up
+    printer.run_gcode(p.add_movement(x=191.25,y=255,speed=500))
+    printer.run_gcode(p.add_fan(speed=0)) # release piece
+    printer.run_gcode(p.add_home()) # go home
+  printer.run_gcode(p.add_movement(x=best_move_coords[0][0], y=best_move_coords[0][1], z=piece_height, speed=500)) # find coords of start square and go there
+  printer.run_gcode(p.add_fan()) # pick up piece
+  printer.run_gcode(p.add_movement(z=20, speed=1000)) # move up
+  printer.run_gcode(p.add_movement(x=best_move_coords[1][0], y=best_move_coords[1][1], z=piece_height, speed=500)) # find coords of end square and go there
+  printer.run_gcode(p.add_fan(speed=0)) # release piece
+  printer.run_gcode(p.add_home()) # go home
+  return best_move
 
 print('Robotic Chess v1.0.0')
 print('MIT Licence 2024 Benjamin Porter and Zachary Birket')
@@ -72,18 +72,18 @@ else:
   sys.exit()
 
 if mode==0 or mode==1: # if <=1 computers are playing
-	b = Board() # initialise classes
-	p = Parser()
-	printer = robotic_chess.octoprint.Printer()
+  b = Board() # initialise classes
+  p = Parser()
+  printer = robotic_chess.octoprint.Printer()
   print('Please select a rating:')
-	print('Valid ratings are between 100 and 3100')
+  print('Valid ratings are between 100 and 3100')
   b.engine_skill(int(input('Rating: '))))
 else: # if 2 computers are playing
-	b1 = Board() # set up two computer instances
-	b2 = Board()
-	p = Parser()
-	printer = robotic_chess.octoprint.Printer()
-	print('Please select a rating for bot 1:')
+  b1 = Board() # set up two computer instances
+  b2 = Board()
+  p = Parser()
+  printer = robotic_chess.octoprint.Printer()
+  print('Please select a rating for bot 1:')
   print('Valid ratings are between 100 and 3100')
   b1.engine_skill(int(input('Rating: ')))
   print('Please select a rating for bot 2:')
