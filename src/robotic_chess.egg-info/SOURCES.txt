@@ -8,4 +8,5 @@ src/robotic_chess/octoprint.py
 src/robotic_chess.egg-info/PKG-INFO
 src/robotic_chess.egg-info/SOURCES.txt
 src/robotic_chess.egg-info/dependency_links.txt
+src/robotic_chess.egg-info/requires.txt
 src/robotic_chess.egg-info/top_level.txt
