@@ -1,7 +1,7 @@
 print('Loading stockfish lib...')
 from stockfish import Stockfish
 print('Loading stockfish engine...')
-stockfish_path="" # place path to stockfish here
+stockfish_path="/usr/local/bin/stockfish" # place path to stockfish here
 if len(stockfish_path)==0:
    raise ImportError('Stockfish engine failed to load. Please specify a valid path string.)
 class Board:
