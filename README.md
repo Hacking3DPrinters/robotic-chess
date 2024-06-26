@@ -5,7 +5,7 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 
 ---
 
-## Requirements
+## Requirements
 
 ### Essentials
 * 2-thread CPU
