@@ -8,22 +8,20 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 ## Requirements
 
 ### Essentials
-* 2-thread CPU
-* A Unix-based operating system (or an understanding of simple Windows commands)
+* 3-core CPU
+* A Linux-based operating system with sudo
 * Python 3.10+ and pip
 * Octoprint server connected to a 3D printer
 * An electromagnet connected to M106/M107 extruder fan control
 
 ### Recommended
-* 4-thread+ CPU
+* 4-core+ CPU
 * Python 3.11+ and pip
 * Knowledge of simple Linux commands
 
 ---
 
 ## Installation
-
-If running Windows, please use the equivalent Windows commands.
 
 ### Installation from wheel (recommended)
 
