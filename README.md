@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hacking3DPrinters/robotic-chess/main/3DCHESS.png", width=20%, height=auto />
+</p>
+
+
 # Robotic Chess
 
 An chess playing robot, powered by Stockfish and Octoprint.
