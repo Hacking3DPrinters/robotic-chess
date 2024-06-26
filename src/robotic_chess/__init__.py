@@ -2,6 +2,9 @@ print('Initialising libraries...')
 from robotic_chess.chess import Board # import chess lib
 from robotic_chess.gcode import Parser # import gcode lib
 import robotic_chess.octoprint # import printer lib
+from multiprocessing import cpu_count as cpus
+from math import ceil as roundup
+from math import floor as rounddown
 import sys # import exit lib
 # main code goes here
 print('Initialised.')
@@ -58,6 +61,10 @@ print('Robotic Chess v1.0.0')
 print('MIT Licence 2024 Benjamin Porter and Zachary Birket')
 print()
 
+if cpus()<3:
+  print('Not enough CPUs.')
+  sys.exit()
+
 print('Please select a game mode:')
 print('Mode 0: Physical Human vs. Virtual Computer')
 print('Mode 1: Physical Human vs. Virtual Human')
@@ -66,21 +73,23 @@ print('Mode 2: Virtual Computer vs. Virtual Computer')
 mode = int(input('Mode (0/1/2): ')) # track game mode (0 = human vs. computer, 1 = human vs. human-controlled computer, 2 = computer vs. computer) - functionality will be added later
 
 if mode==0 or mode==1 or mode==2: # check if mode is valid
-  pass
+  if mode==2 and cpus()<4:
+    print('Not enough CPU cores. Please retry.')
+    sys.exit()
 else:
   print('Mode invalid. Please retry.') # otherwise exit
   sys.exit()
 
 if mode==0 or mode==1: # if <=1 computers are playing
-  b = Board() # initialise classes
+  b = Board(cpu=round(roundup((cpus()-2))) # initialise classes
   p = Parser()
   printer = robotic_chess.octoprint.Printer()
   print('Please select a rating:')
   print('Valid ratings are between 100 and 3100')
   b.engine_skill(int(input('Rating: '))))
 else: # if 2 computers are playing
-  b1 = Board() # set up two computer instances
-  b2 = Board()
+  b1 = Board(cpu=round(roundup((cpus()-2)/2))) # set up two computer instances
+  b2 = Board(cpu=round(rounddown((cpus()-2)/2)))
   p = Parser()
   printer = robotic_chess.octoprint.Printer()
   print('Please select a rating for bot 1:')
