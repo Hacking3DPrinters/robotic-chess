@@ -1,7 +1,9 @@
 print('Initialising libraries...')
-from robotic_chess.chess import Board # import chess lib
-from robotic_chess.gcode import Parser # import gcode lib
 import robotic_chess.octoprint # import printer lib
+
+from robotic_chess.gcode import Parser # import gcode lib
+from robotic_chess.chess import Board # import chess lib
+
 from multiprocessing import cpu_count as cpus
 from math import ceil as roundup
 from math import floor as rounddown
@@ -86,7 +88,7 @@ if mode==0 or mode==1: # if <=1 computers are playing
   printer = robotic_chess.octoprint.Printer()
   print('Please select a rating:')
   print('Valid ratings are between 100 and 3100')
-  b.engine_skill(int(input('Rating: '))))
+  b.engine_skill(int(input('Rating: ')))
 else: # if 2 computers are playing
   b1 = Board(cpu=round(roundup((cpus()-2)/2))) # set up two computer instances
   b2 = Board(cpu=round(rounddown((cpus()-2)/2)))

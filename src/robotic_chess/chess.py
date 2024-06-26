@@ -3,7 +3,7 @@ from stockfish import Stockfish
 print('Loading stockfish engine...')
 stockfish_path="/usr/local/bin/stockfish" # place path to stockfish here
 if len(stockfish_path)==0:
-   raise ImportError('Stockfish engine failed to load. Please specify a valid path string.)
+   raise ImportError('Stockfish engine failed to load. Please specify a valid path string.')
 class Board:
     def __init__(self,fen='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',cpu=2,ram=2048):
         self.stockfish = Stockfish(path=stockfish_path, parameters={"Threads": cpu, "Hash": ram})
