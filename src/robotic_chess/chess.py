@@ -17,7 +17,7 @@ class Engine:
     def get_capture(self,move='a1a2'):
         return self.stockfish.will_move_be_a_capture(move)
     def engine_move(self):
-        move=self.stockfish.get_best_move())
+        move=self.stockfish.get_best_move()
         self.board.push_uci(move)
         return move
     def opponent_move(self,move):

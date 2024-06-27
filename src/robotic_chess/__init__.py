@@ -60,7 +60,7 @@ def robot_move(best_move): # make move
 print('Robotic Chess v1.0.0')
 print('MIT Licence 2024 Benjamin Porter and Zachary Birket')
 print()
-
+if __name__ == "__main__":
 if cpus()<3:
   print('Not enough CPUs.')
   sys.exit()
@@ -78,7 +78,7 @@ else:
   print('Mode invalid. Please retry.') # otherwise exit
   sys.exit()
 
-b = Engine(cpu=round(roundup((cpus()-2))) # initialise classes
+b = Engine(cpu=round(roundup((cpus()-2)))) # initialise classes
 p = Parser()
 printer = robotic_chess.octoprint.Printer()
 print('Please select a rating:')
