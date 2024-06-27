@@ -18,7 +18,8 @@ classifiers = [
 ]
 dependencies = [
     "stockfish==3.28.0",
-    "octoprint-cli==3.3.2"
+    "octoprint-cli==3.3.2",
+    "chess==1.10.0"
 ]
 
 [project.urls]
