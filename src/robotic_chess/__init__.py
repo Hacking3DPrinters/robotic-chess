@@ -61,48 +61,49 @@ print('Robotic Chess v1.0.0')
 print('MIT Licence 2024 Benjamin Porter and Zachary Birket')
 print()
 if __name__ == "__main__":
-if cpus()<3:
-  print('Not enough CPUs.')
-  sys.exit()
-
-print('Please select a game mode:')
-print('Mode 0: Physical Human vs. Virtual Computer')
-print('Mode 1: Physical Human vs. Virtual Human')
-print('Mode 2: Virtual Computer vs. Virtual Computer')
-
-mode = int(input('Mode (0/1/2): ')) # track game mode (0 = human vs. computer, 1 = human vs. human-controlled computer, 2 = computer vs. computer) - functionality will be added later
-
-if mode==0 or mode==1 or mode==2: # check if mode is valid
-  pass
-else:
-  print('Mode invalid. Please retry.') # otherwise exit
-  sys.exit()
-
-b = Engine(cpu=round(roundup((cpus()-2)))) # initialise classes
-p = Parser()
-printer = robotic_chess.octoprint.Printer()
-print('Please select a rating:')
-print('Valid ratings are between 100 and 3100')
-b.engine_skill(int(input('Rating: ')))
-
-piece_height = 100 # define piece height in mm
-
-printer.run_gcode(p.setup(rel_pos=False))
-
-playing = True # track game state
-
-while playing: # while game is ongoing
-  if mode==0: # if human vs computer
-    b.opponent_move(human_move()) # take move
-  elif mode==1: # if human vs human
-    print(human_move) # display human move to remote human
-  else: # if computer vs computer
-    computer_move(b.engine_move()) # take move and record for opponent
-  if mode==0: # if human vs computer
-    computer_move(b.engine_move())
-  elif mode==1: # if human vs human
-    # take move from remote human
+  if cpus()<3:
+    print('Not enough CPUs.')
+    sys.exit()
+  
+  print('Please select a game mode:')
+  print('Mode 0: Physical Human vs. Virtual Computer')
+  print('Mode 1: Physical Human vs. Virtual Human')
+  print('Mode 2: Virtual Computer vs. Virtual Computer')
+  
+  mode = int(input('Mode (0/1/2): ')) # track game mode (0 = human vs. computer, 1 = human vs. human-controlled computer, 2 = computer vs. computer) - functionality will be added later
+  
+  if mode==0 or mode==1 or mode==2: # check if mode is valid
     pass
   else:
-    computer_move(b.engine_move()) # take move and record for opponent
-  # check for win after each move
+    print('Mode invalid. Please retry.') # otherwise exit
+    sys.exit()
+  
+  b = Engine(cpu=round(roundup((cpus()-2)))) # initialise classes
+  p = Parser()
+  printer = robotic_chess.octoprint.Printer()
+  print('Please select a rating:')
+  print('Valid ratings are between 100 and 3100')
+  b.engine_skill(int(input('Rating: ')))
+  
+  piece_height = 100 # define piece height in mm
+  
+  printer.run_gcode(p.setup(rel_pos=False))
+  
+  playing = True # track game state
+  
+  while playing: # while game is ongoing
+    if mode==0: # if human vs computer
+      b.opponent_move(human_move()) # take move
+    elif mode==1: # if human vs human
+      print(human_move) # display human move to remote human
+    else: # if computer vs computer
+      computer_move(b.engine_move()) # take move and record for opponent
+    if mode==0: # if human vs computer
+      computer_move(b.engine_move())
+    elif mode==1: # if human vs human
+      # take move from remote human
+      pass
+    else:
+      computer_move(b.engine_move()) # take move and record for opponent
+    # check for win after each move
+  
