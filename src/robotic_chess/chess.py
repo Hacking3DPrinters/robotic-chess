@@ -25,7 +25,7 @@ class Engine:
         self.board.push_uci(move)
         self.stockfish.make_moves_from_current_position([move.uci()])
     def check_win(self):
-        return self.board.outcome()
+        return self.board.is_game_over()
 
 class Board(chess.Board):
     pass
