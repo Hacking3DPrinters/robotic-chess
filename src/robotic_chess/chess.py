@@ -3,7 +3,14 @@ import chess
 print('Loading stockfish lib...')
 from stockfish import Stockfish
 print('Loading stockfish engine...')
-stockfish_path="/usr/local/bin/stockfish" # place path to stockfish here
+import getpass
+import platform
+if platform.system()=='Linux':
+    stockfish_path="/usr/local/bin/stockfish" # place path to stockfish here
+elif platform.system()=='Windows':
+    stockfish_path="C:/Users/"+str(getpass.getuser())+"/"
+else:
+    raise OSError('Unsupported OS')
 class Engine:
     def __init__(self,fenstr='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',cpu=2,ram=2048):
         self.stockfish = Stockfish(path=stockfish_path, parameters={"Threads": cpu, "Hash": ram})
