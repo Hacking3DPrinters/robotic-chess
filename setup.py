@@ -14,6 +14,6 @@ if __name__ == "__main__":
     setup()
     system('git clone https://github.com/official-stockfish/Stockfish.git')
     system('cd Stockfish/src/ && make -j build')
-    system('move Stockfish/src/stockfish C:/Users/'+str(getpass.getuser())+'/')
+    system('move Stockfish/src/stockfish C:/Users/'+str(getpass.getuser())+'/stockfish')
   else:
     raise OSError('OS unsupported.')
