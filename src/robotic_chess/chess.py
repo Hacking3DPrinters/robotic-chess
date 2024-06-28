@@ -8,7 +8,7 @@ import platform
 if platform.system()=='Linux':
     stockfish_path="/usr/local/bin/stockfish" # place path to stockfish here
 elif platform.system()=='Windows':
-    stockfish_path="C:/Users/"+str(getpass.getuser())+"/"
+    stockfish_path="C:/Users/"+str(getpass.getuser())+"/stockfish"
 else:
     raise OSError('Unsupported OS')
 class Engine:
