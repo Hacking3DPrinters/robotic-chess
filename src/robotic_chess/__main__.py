@@ -97,16 +97,16 @@ if __name__ == "__main__":
     elif mode==1: # if human vs human
       print(human_move) # display human move to remote human
     else: # if computer vs computer
-      computer_move(b.engine_move()) # take move and record for opponent
+      robot_move(b.engine_move()) # take move and record for opponent
     if b.check_win():
       break
     if mode==0: # if human vs computer
-      computer_move(b.engine_move())
+      robot_move(b.engine_move())
     elif mode==1: # if human vs human
       # take move from remote human
       pass
     else:
-      computer_move(b.engine_move()) # take move and record for opponent
+      robot_move(b.engine_move()) # take move and record for opponent
     # check for win after each move
     if b.check_win():
       break
