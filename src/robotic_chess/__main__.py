@@ -42,7 +42,7 @@ def human_move(): # take move from human
 
 def robot_move(best_move): # make move
   best_move_coords = notation_to_coords(move=best_move) # get coords for best move
-  if get_capture(best_move): # if move is a capture
+  if b.get_capture(best_move): # if move is a capture
     capture_coords={'x':best_move_coords[1][0],'y':best_move_coords[1][1],'z':piece_height} # find coords for the capture
     printer.run_gcode(p.add_movement(x=capture_coords['x'], y=capture_coords['y'], z=capture_coords['z'], speed=500)) # go to those coords
     printer.run_gcode(p.add_fan()) # pick up piece
