@@ -14,7 +14,7 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 
 ### Essentials
 * 3-core CPU and at least 3GB of RAM (theoretically this can run with only 2 cores and 2GB of RAM, but at the risk of crashing / hanging your computer)
-* A Linux-based operating system with sudo
+* A Linux-based operating system with sudo OR a Windows 10/11 operating system.
 * Python 3.10+ and pip
 * Octoprint server connected to a 3D printer
 * An electromagnet connected to M106/M107 extruder fan control
