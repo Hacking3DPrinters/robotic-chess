@@ -4,6 +4,8 @@ import robotic_chess.octoprint # import printer lib
 from robotic_chess.gcode import Parser # import gcode lib
 from robotic_chess.engine import Engine  # import chess lib
 
+from chess import IllegalMoveError
+
 from multiprocessing import cpu_count as cpus
 from math import ceil as roundup
 from math import floor as rounddown
@@ -34,11 +36,11 @@ def notation_to_coords(move='a1a2'): # use complex function to convert a square-
 
 def human_move(): # take move from human
   while True: # while move is invalid
-    h_move = str(input('Input move: ')) # take a move
+    h_move = str(input('Input move: ')) # take a move 
     if len(h_move)==4: # if move is valid
       break # break loop
     print('Input invalid. Should be formatted as [start][end], 	e.g. a1a2 for square a1 to square a2') # if move is invalid, print error message
-    return h_move # return move
+  return h_move # return move
 
 def robot_move(best_move): # make move
   best_move_coords = notation_to_coords(move=best_move) # get coords for best move
@@ -93,9 +95,14 @@ if __name__ == "__main__":
   
   while playing: # while game is ongoing
     if mode==0: # if human vs computer
-      b.opponent_move(human_move()) # take move
+        while True:
+          try:
+            b.opponent_move(human_move()) # take move
+            break
+          except IllegalMoveError:
+            print('Illegal move, please try again')
     elif mode==1: # if human vs human
-      print(human_move) # display human move to remote human
+      print(human_move()) # display human move to remote human
     else: # if computer vs computer
       robot_move(b.engine_move()) # take move and record for opponent
     if b.check_win():

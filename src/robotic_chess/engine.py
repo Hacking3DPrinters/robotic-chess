@@ -26,11 +26,12 @@ class Engine:
     def engine_move(self):
         move=self.stockfish.get_best_move()
         self.board.push_uci(move)
+        self.stockfish.make_moves_from_current_position([move])
         return move
     def opponent_move(self,move):
         # expects an UCI string
         self.board.push_uci(move)
-        self.stockfish.make_moves_from_current_position([move.uci()])
+        self.stockfish.make_moves_from_current_position([move])
     def check_win(self):
         return self.board.is_game_over()
 
