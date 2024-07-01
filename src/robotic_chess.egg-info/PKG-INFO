@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: robotic_chess
-Version: 1.0rc1
+Version: 1.0.0
 Summary: A 3D printer-based chess playing robot.
 Author-email: Benjamin Porter <bcgcustomerservices@gmail.com>
 Project-URL: Homepage, https://github.com/hacking3dprinters/robotic-chess
