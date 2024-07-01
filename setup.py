@@ -12,8 +12,8 @@ if __name__ == "__main__":
     system('sudo chmod a+x /usr/local/bin/stockfish')
   elif platform.system()=='Windows':
     setup()
-    system('git clone https://github.com/official-stockfish/Stockfish.git')
-    system('cd Stockfish/src/ && make -j build')
-    system('move Stockfish/src/stockfish C:/Users/'+str(getpass.getuser())+'/stockfish')
+    system('tar -xf stockfish-windows.zip')
+    system('cd stockfish/')
+    system('start stockfish-windows-x86-64-sse41-popcnt.exe')
   else:
     raise OSError('OS unsupported.')
