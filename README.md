@@ -40,6 +40,9 @@ Then, run
 
 First, clone our repo using `git clone https://github.com/Hacking3DPrinters/robotic-chess.git`, and enter the new directory. Then do `pip install dist/robotic_chess-0.2.1-py3-none-any.whl` (replace 0.2.1 with the desired version number). 
 
+### Windows Stockfish binaries
+https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-sse41-popcnt.zip
+
 ---
 
 ## Running
