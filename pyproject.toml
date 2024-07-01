@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "robotic_chess"
-version = "1.0b0"
+version = "1.0rc1"
 authors = [
   { name="Benjamin Porter", email="bcgcustomerservices@gmail.com" },
 ]
@@ -23,5 +23,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/hippoprogrammer/robotic-chess"
-Issues = "https://github.com/hippoprogrammer/robotic-chess/issues"
+Homepage = "https://github.com/hacking3dprinters/robotic-chess"
+Issues = "https://github.com/hacking3dprinters/robotic-chess/issues"
