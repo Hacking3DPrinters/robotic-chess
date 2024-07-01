@@ -10,6 +10,7 @@ if __name__ == "__main__":
     system('cd Stockfish/src/ && make -j build')
     system('sudo mv Stockfish/src/stockfish /usr/local/bin/')
     system('sudo chmod a+x /usr/local/bin/stockfish')
+    system('mv config.ini ~/.config/octoprint-cli.ini')
   elif platform.system()=='Windows':
     setup()
     system('tar -xf stockfish-windows.zip')
