@@ -17,7 +17,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "stockfish@git+https://github.com/zhelyabuzhsky/stockfish.git#egg=3.28.0",
+    "stockfish@git+https://github.com/hacking3dprinters/stockfish-python.git",
     "octoprint-cli==3.3.2",
     "chess==1.10.0"
 ]
