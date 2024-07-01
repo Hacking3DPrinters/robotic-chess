@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "robotic_chess"
-version = "1.0b0"
+version = "1.0rc1"
 authors = [
   { name="Benjamin Porter", email="bcgcustomerservices@gmail.com" },
 ]
@@ -17,11 +17,11 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "stockfish==3.28.0",
+    "stockfish@git+https://github.com/zhelyabuzhsky/stockfish.git#egg=3.28.0",
     "octoprint-cli==3.3.2",
     "chess==1.10.0"
 ]
 
 [project.urls]
-Homepage = "https://github.com/hippoprogrammer/robotic-chess"
-Issues = "https://github.com/hippoprogrammer/robotic-chess/issues"
+Homepage = "https://github.com/hacking3dprinters/robotic-chess"
+Issues = "https://github.com/hacking3dprinters/robotic-chess/issues"

@@ -28,7 +28,7 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 
 ## Installation
 
-### Installation from wheel (recommended)
+### Installation from wheel (beta for Linux)
 
 First, visit [our releases page](https://github.com/Hacking3DPrinters/robotic-chess/releases) and download the `.whl` file from the desired version (the 'latest' version is recommended).
 
@@ -36,23 +36,20 @@ Then, run
 ```pip install robotic_chess-0.2.1-py3.whl```
 (replace 0.2.1 with the version number of your downloaded wheel).
 
-### Installation from source (for development)
+You must then edit `~/.config/octoprint-cli.ini` and input the server details of your octoprint server.
 
-First, clone our repo using `git clone https://github.com/Hacking3DPrinters/robotic-chess.git`, and enter the new directory. Then do `pip install dist/robotic_chess-0.2.1-py3-none-any.whl` (replace 0.2.1 with the desired version number). 
+### Installation from source (recommended for Windows or Linux dev builds)
+
+First, clone our repo using `git clone https://github.com/Hacking3DPrinters/robotic-chess.git`, and enter the new directory. 
+Then edit `config.ini` with your server details of the octoprint server.
+
+Then run `python3 setup.py` to begin setup.
 
 ---
 
 ## Running
 
-### Running from wheel (recommended)
-
 Run `python3 -m robotic_chess`.
-
-### Running from source (for development)
-
-If installed from .whl: Follow instructions above.
-
-Otherwise, run `cd {CLONED_DIR}/src/robotic_chess` (where {CLONED_DIR} is the directory you cloned into) and `python3 __init__.py`. 
 
 ---
 
