@@ -14,7 +14,7 @@ if __name__ == "__main__":
   elif platform.system()=='Windows':
     setup()
     system('tar -xf stockfish-windows.zip')
-    system('cd stockfish/')
+    system('move stockfish/stockfish-windows-x86-64-sse41-popcnt.exe')
     system('start stockfish-windows-x86-64-sse41-popcnt.exe')
   else:
     raise OSError('OS unsupported.')
