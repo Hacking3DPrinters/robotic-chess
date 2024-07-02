@@ -43,7 +43,7 @@ You must then edit `~/.config/octoprint-cli.ini` and input the server details of
 First, clone our repo using `git clone https://github.com/Hacking3DPrinters/robotic-chess.git`, and enter the new directory. 
 Then edit `config.ini` with your server details of the octoprint server.
 
-Then run `python3 setup.py` to begin setup.
+Then run `python3 setup.py install` to begin setup.
 
 ---
 
