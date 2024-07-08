@@ -1,4 +1,4 @@
 # pip requirements file for robotic-chess
-stockfish==3.28.0
+git+https://github.com/hacking3dprinters/stockfish-python.git#egg=stockfish
 octoprint-cli==3.3.2
 chess==1.10.0
