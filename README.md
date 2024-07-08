@@ -14,7 +14,7 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 
 ### Essentials
 * 3-core CPU and at least 3GB of RAM (theoretically this can run with only 2 cores and 2GB of RAM, but at the risk of crashing / hanging your computer)
-* A Linux-based operating system with sudo OR a Windows 10/11 operating system.
+* A Linux-based operating system with sudo OR a Windows 10/11 operating system (more difficult)
 * Python 3.10+ and pip
 * Octoprint server connected to a 3D printer
 * An electromagnet connected to M106/M107 extruder fan control
@@ -26,22 +26,30 @@ For documentation, see [our wiki](https://github.com/Hacking3DPrinters/robotic-c
 
 ---
 
-## Installation NEEDS FIXING
+## Installation
 
-### Installation from wheel (beta for Linux)
+### ~~Installation from wheel (beta for Linux)~~ - SUSPENDED UNTIL FURTHER NOTICE
 
-First, visit [our releases page](https://github.com/Hacking3DPrinters/robotic-chess/releases) and download the `.whl` file from the desired version (the 'latest' version is recommended).
+~~First, visit [our releases page](https://github.com/Hacking3DPrinters/robotic-chess/releases) and download the `.whl` file from the desired version (the 'latest' version is recommended).~~
 
-Then, run 
-```pip install robotic_chess-0.2.1-py3.whl```
-(replace 0.2.1 with the version number of your downloaded wheel).
+~~Then, run~~ 
+~~```pip install robotic_chess-0.2.1-py3.whl```~~
+~~(replace 0.2.1 with the version number of your downloaded wheel).~~
 
-You must then edit `~/.config/octoprint-cli.ini` and input the server details of your octoprint server.
+~~You must then edit `~/.config/octoprint-cli.ini` and input the server details of your octoprint server.~~
 
-### Installation from source (recommended for Windows or Linux dev builds)
+### Installation from source - Linux (recommended for Linux dev builds)
 
 First, clone our repo using `git clone https://github.com/Hacking3DPrinters/robotic-chess.git`, and enter the new directory. 
 Then edit `config.ini` with your server details of the octoprint server.
+
+Then run `python3 setup.py install` to begin setup.
+
+### Installation from source - Windows (recommended for Windows)
+
+First, download the `Source code (zip)` from our releases page.
+
+Unzip it, then edit `config.ini` with your server details of the octoprint server.
 
 Then run `python3 setup.py install` to begin setup.
 
