@@ -16,5 +16,6 @@ if __name__ == "__main__":
     system('tar -xf stockfish-windows.zip')
     system('mkdir C:/Users/'+getpass.getuser()+'/stockfish/')
     system('move stockfish/stockfish-windows-x86-64-sse41-popcnt.exe C:/Users/'+getpass.getuser()+'/stockfish/stockfish.exe')
+    # config.ini does not need to be moved
   else:
     raise OSError('OS unsupported.')
