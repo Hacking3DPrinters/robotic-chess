@@ -1,0 +1,3 @@
+stockfish@ git+https://github.com/hacking3dprinters/stockfish-python.git
+octoprint-cli==3.3.2
+chess==1.10.0

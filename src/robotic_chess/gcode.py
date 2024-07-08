@@ -2,7 +2,7 @@
 class Parser:
     def __init__(self):
         pass
-    def setup(self,rel_pos=True,mm=True,home=(0,20,0)):
+    def setup(self,rel_pos=True,mm=True,home=(0,0,20)):
         cmd_list=[]
         self.home=home
         self.pos=rel_pos
@@ -29,7 +29,7 @@ class Parser:
             cmd+='F{f}'.format(f=str(speed))
             return tuple([cmd])
         else:
-        	pass
+            pass
     def add_home(self):
         cmd_list=[]
         old_pos=self.pos
@@ -54,12 +54,9 @@ class Parser:
         if mm:
             return tuple(['G21 ; mm'])
         else:
-        	return tuple(['G20 ; inches'])
-    def change_home(self,home=(0,20,0)):
-        self.home=home
-        
-                
-        
-        
-        
-        
+            return tuple(['G20 ; inches'])
+        def change_home(self,home=(0,0,20)):
+            self.home=home
+
+print('Gcodelib v2.1')
+print('MIT Licence 2024 Benjamin Porter')

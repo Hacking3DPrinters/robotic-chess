@@ -4,10 +4,11 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| >0.2.1  | ✅ Fully Supported (latest) |
-| 0.2.0   | ✳️ Fully Supported |
-| 0.1     | :x: Not Supported | 
-| 0.1a    | :x: Not Supported |
+| 1.0.0 | ✅ Fully Supported (latest) |
+| 1.0a/b/rc | ✳️ Partially Supported |
+| 0.2.x | :x: Not Supported |
+| 0.1 | :x: Not Supported | 
+| 0.1a | :x: Not Supported |
 
 ## Reporting a Vulnerability
 

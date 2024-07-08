@@ -1,5 +1,7 @@
+print('Loading os module...')
 from os import system as cmd
 from os.path import exists
+print('Loading finished.')
 class PrinterError(Exception):
   pass
 class Printer:
@@ -20,8 +22,8 @@ class Printer:
       raise PrinterError('No file selected using Printer.load_file()')
   def run_gcode(self,gcode=()):
     if str(type(gcode))=='<class \'tuple\'>':
-    	for gcmd in gcode:
-    		cmd('octoprint-cli gcode {command}'.format(command=str(gcmd)))
+      for gcmd in gcode:
+        cmd('octoprint-cli gcode \'{command}\''.format(command=str(gcmd)))
     else:
       raise PrinterError('gcode was not in tuple form')
   def connect(self):
@@ -29,3 +31,6 @@ class Printer:
     cmd('octoprint-cli connection connect')
   def disconnect(self):
     cmd('octoprint-cli connection disconnect')
+
+print('Octoprintlib v1.2')
+print('MIT Licence 2024 Benjamin Porter')
