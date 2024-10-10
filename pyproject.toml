@@ -19,7 +19,7 @@ classifiers = [
 dependencies = [
     "stockfish@git+https://github.com/hacking3dprinters/stockfish-python.git",
     "octoprint-cli==3.3.2",
-    "chess==1.10.0"
+    "chess==1.11.1"
 ]
 
 [project.urls]
