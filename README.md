@@ -63,4 +63,4 @@ You can also submit a 'feature request' issue: give us some example code if you 
 
 ## Status
 
-This project is in ACTIVE DEVELOPMENT.
+This project is in
